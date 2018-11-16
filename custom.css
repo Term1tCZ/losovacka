@@ -1,0 +1,32 @@
+.container {
+  margin-top: 250px;
+}
+.tlacitka1 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.tlacitka2 {
+  margin-bottom: 70px;
+}
+.btn-x {
+  padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 10px;
+    width:100%;
+}
+.btn-xl {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  font-size: 20px;
+  border-radius: 10px;
+  width:100%;
+}
+.cs {
+  margin-left: 200px;
+}
+.alert {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-left: 230px;
+  margin-right: 230px;
+}
