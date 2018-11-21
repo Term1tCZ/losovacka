@@ -20,20 +20,13 @@ function ulozeni() {
     if (trida == 1) {
       ulozit = 1;
       document.getElementById("btnTrida").innerHTML = " 1.A";
+      document.getElementById("btnDelka").innerHTML = zkouseniA.length;
     }
     if (trida == 2) {
       ulozit = 2;
       document.getElementById("btnTrida").innerHTML = " 1.B";
+        document.getElementById("btnDelka").innerHTML = zkouseniB.length;
     }
-    if (trida == 3) {
-      ulozit = 3;
-      document.getElementById("btnTrida").innerHTML = " 2.A";
-    }
-    if (trida == 4) {
-      ulozit = 4;
-      document.getElementById("btnTrida").innerHTML = " 2.B";
-    }
-
 }
 ulozeni();
 
@@ -52,11 +45,12 @@ function dozkouset() {
         document.getElementById("trida").innerHTML = "1.A";
         document.getElementById("btnCislo").innerHTML = vybrany;
         zkouseniA.push(vybrany);
+        document.getElementById("btnDelka").innerHTML = zkouseniA.length;
         nenalezeno = false;
       }
       if (zkouseniA.length == prvniA.length) {
         nenalezeno = false;
-        document.getElementById("prvniText").innerHTML = "Všichni už byli zkoušení";
+        document.getElementById("prvniText").innerHTML = "Všichni už byli zkoušení!";
       }
     }
 
@@ -72,6 +66,7 @@ function dozkouset() {
         document.getElementById("trida").innerHTML = "1.B";
         document.getElementById("btnCislo").innerHTML = vybrany;
         zkouseniB.push(vybrany);
+        document.getElementById("btnDelka").innerHTML = zkouseniB.length;
         nenalezeno = false;
       }
       if (zkouseniB.length == prvniB.length) {
@@ -98,6 +93,7 @@ function vyzkouset() {
         document.getElementById("trida").innerHTML = "1.A";
         document.getElementById("btnCislo").innerHTML = vybrany;
         zkouseniA.push(vybrany);
+        document.getElementById("btnDelka").innerHTML = zkouseniA.length;
         nenalezeno = false;
       }
       if (zkouseniA.includes(zachranaA)) {
@@ -105,6 +101,7 @@ function vyzkouset() {
         document.getElementById("trida").innerHTML = "1.A";
         document.getElementById("btnCislo").innerHTML = vybrany;
         zkouseniA.push(vybrany);
+        document.getElementById("btnDelka").innerHTML = zkouseniA.length;
         nenalezeno = false;
       }
       if (zkouseniA.length == prvniA.length) {
@@ -124,6 +121,7 @@ function vyzkouset() {
         document.getElementById("trida").innerHTML = "1.B";
         document.getElementById("btnCislo").innerHTML = vybrany;
         zkouseniB.push(vybrany);
+        document.getElementById("btnDelka").innerHTML = zkouseniB.length;
         nenalezeno = false;
       }
       if (zkouseniB.includes(zachranaB)) {
@@ -131,6 +129,7 @@ function vyzkouset() {
         document.getElementById("trida").innerHTML = "1.B";
         document.getElementById("btnCislo").innerHTML = vybrany;
         zkouseniB.push(vybrany);
+        document.getElementById("btnDelka").innerHTML = zkouseniB.length;
         nenalezeno = false;
       }
       if (zkouseniA.length == prvniB.length) {
