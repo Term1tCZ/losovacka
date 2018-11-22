@@ -8,43 +8,55 @@
     <link rel="stylesheet" href="custom.css">
   </head>
   <body onload="neviditelnost()">
-    <div class="nav">
-      <button class="a btn btn-dark"><span>Vybraná třída: </span><span id="btnTrida"></span></button>
-      <button class="a btn btn-dark"><span>Vybrané číslo: </span><span id="btnCislo"></span></button>
-      <button class="a btn btn-dark"><span>Počet vyzkoušených: </span><span id="btnDelka"></span></button>
+    <div class="ukazatel">
+      <div class="row">
+        <div class="col">
+          <button class="a btn btn-dark"><span>Vybraná třída: </span><span id="btnTrida"></span></button>
+        </div>
+        <!-- <div class="col"></div> -->
+      </div>
+      <div class="row">
+        <div class="col">
+          <button class="a btn btn-dark"><span>Vybrané číslo: </span><span id="btnCislo"></span></button>
+        </div>
+        <!-- <div class="col"></div> -->
+      </div>
+      <div class="row">
+        <div class="col">
+          <button class="a btn btn-dark"><span>Počet vyzkoušených: </span><span id="btnDelka"></span></button>
+        </div>
+        <!-- <div class="col"></div> -->
+      </div>
     </div>
-
-
-
-    <div class="container">
+    <!-- <div class="container"> -->
       <div class="tlacitka1">
         <div class="row">
-            <div class="col"></div>
-            <div class="col">
-              <button type="button" class="btn-x btn-primary" data-toggle="modal" data-target="#modal">Vybrat třídu a žáka</button>
+            <div class="col-3"></div>
+            <div class="col-2">
+              <button type="button" class="btn-xl btn-primary" data-toggle="modal" data-target="#modal">Vybrat třídu</button>
             </div>
-            <div class="col">
+            <div class="col-2">
               <button type="button" class="btn-xl btn-primary"  onclick="vyzkouset(); viditelnost()">Vyzkoušet</button>
             </div>
-            <div class="col">
+            <div class="col-2">
               <button type="button" class="btn-xl btn-primary" onclick="dozkouset(); viditelnost()">Dozkoušet</button>
             </div>
-            <div class="col"></div>
+            <div class="col-3"></div>
         </div>
       </div>
       <div class="tlacitka2">
         <div class="row">
-            <div class="col"></div>
-            <div class="col">
-              <button type="button" class="btn-xl btn-primary">Uložit známku</button>
+            <div class="col-3"></div>
+            <div class="col-2">
+              <button type="button" class="btn-xl btn-primary" disabled>Uložit známku</button>
             </div>
-            <div class="col">
+            <div class="col-2">
               <button type="button" class="btn-xl btn-primary" onclick="obnovit()">Obnovit stránku</button>
             </div>
-            <div class="col">
-              <button type="button" class="btn-x btn-primary">Poslat znamku na email</button>
+            <div class="col-2">
+              <button type="button" class="btn-xl btn-primary" disabled>Poslat na email</button>
             </div>
-            <div class="col"></div>
+            <div class="col-3"></div>
         </div>
       </div>
       <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
@@ -77,7 +89,7 @@
       <div id="napis">
         <div class="alert alert-primary" id="prvniText" role="alert">Náhodně bylo vybráno ze třídy <span class="font-weight-bold" id="trida"></span> číslo: <span class="font-weight-bold" id="text"></span></div>
       </div>
-    </div>
+    <!-- </div> -->
   </body>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
