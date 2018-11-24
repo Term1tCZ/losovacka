@@ -13,9 +13,12 @@
   border-radius: 10px;
   width: 100%;
   text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 .cs {
   margin-left: 200px;
+  margin-top: 25px;
 }
 .alert {
   padding-top: 15px;
@@ -45,6 +48,10 @@
 .ukazatel {
   margin-top: 30px;
   margin-bottom: 100px;
+}
+.vyberSi {
+  margin-top: 25px;
+  margin-left: 160px;
 }
 @media only screen and (max-width:1800px) {
   .a {

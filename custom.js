@@ -4,15 +4,15 @@ var prvniB = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,
 var zkouseniA = [];
 var zkouseniB = [];
 var ulozit = 0;
-var zachranaA = [];
-var zachranaB = [];
+var zapsatA = [[]]; //cislo, znamka, vaha
+var zapsatB = [[]];
+var vybrany;
 
 function zrusit() {
   document.getElementById("valTrida").value = "0";
 }
 
 function ulozeni() {
-
   var trida = parseInt(document.getElementById("valTrida").value);
     if (trida == 0) {
       ulozit = 0;
@@ -36,13 +36,15 @@ function dozkouset() {
   if (ulozit == 1) {
     var nenalezeno = true;
     while (nenalezeno) {
-      var vybrany = Math.floor(Math.random() * prvniA.length) + 1;
+      vybrany = Math.floor(Math.random() * prvniA.length) + 1;
 
       if (zkouseniA.includes(vybrany)) {
       }
       else {
         document.getElementById("text").innerHTML = vybrany;
+        document.getElementById("text1").innerHTML = vybrany;
         document.getElementById("trida").innerHTML = "1.A";
+        document.getElementById("trida1").innerHTML = "1.A";
         document.getElementById("btnCislo").innerHTML = vybrany;
         zkouseniA.push(vybrany);
         document.getElementById("btnDelka").innerHTML = zkouseniA.length;
@@ -56,14 +58,16 @@ function dozkouset() {
 
   }
   if (ulozit == 2) {
-    var nenalezeno = true;
+    nenalezeno = true;
     while (nenalezeno) {
-      var vybrany = Math.floor(Math.random() * prvniB.length) + 1;
+      vybrany = Math.floor(Math.random() * prvniB.length) + 1;
       if (zkouseniB.includes(vybrany)) {
       }
       else {
         document.getElementById("text").innerHTML = vybrany;
+        document.getElementById("text1").innerHTML = vybrany;
         document.getElementById("trida").innerHTML = "1.B";
+        document.getElementById("trida1").innerHTML = "1.B";
         document.getElementById("btnCislo").innerHTML = vybrany;
         zkouseniB.push(vybrany);
         document.getElementById("btnDelka").innerHTML = zkouseniB.length;
@@ -85,70 +89,74 @@ function vyzkouset() {
   if (ulozit == 1) {
     var nenalezeno = true;
     while (nenalezeno) {
-      var vybrany = Math.floor(Math.random() * prvniA.length) + 1;
-      if (zkouseniA.includes(vybrany) ) {
-        zachranaA.push(vybrany)
-      } else {
-        document.getElementById("text").innerHTML = vybrany;
-        document.getElementById("trida").innerHTML = "1.A";
-        document.getElementById("btnCislo").innerHTML = vybrany;
-        zkouseniA.push(vybrany);
-        document.getElementById("btnDelka").innerHTML = zkouseniA.length;
-        nenalezeno = false;
-      }
-      if (zkouseniA.includes(zachranaA)) {
-        document.getElementById("text").innerHTML = vybrany;
-        document.getElementById("trida").innerHTML = "1.A";
-        document.getElementById("btnCislo").innerHTML = vybrany;
-        zkouseniA.push(vybrany);
-        document.getElementById("btnDelka").innerHTML = zkouseniA.length;
-        nenalezeno = false;
-      }
-      if (zkouseniA.length == prvniA.length) {
-        nenalezeno = false;
-        document.getElementById("prvniText").innerHTML = "Všichni už byli zkoušení";
-      }
+      vybrany = Math.floor(Math.random() * prvniA.length) + 1;
+      zkouseniA.push(vybrany);
+      document.getElementById("text").innerHTML = vybrany;
+      document.getElementById("text1").innerHTML = vybrany;
+      document.getElementById("trida").innerHTML = "1.A";
+      document.getElementById("trida1").innerHTML = "1.A";
+      document.getElementById("btnCislo").innerHTML = vybrany;
+      document.getElementById("btnDelka").innerHTML = zkouseniA.length;
+      nenalezeno = false;
     }
   }
   if (ulozit == 2) {
     var nenalezeno = true;
     while (nenalezeno) {
-      var vybrany = Math.floor(Math.random() * prvniB.length) + 1;
-      if (zkouseniB.includes(vybrany) ) {
-        zachranaB.push(vybrany)
-      } else {
-        document.getElementById("text").innerHTML = vybrany;
-        document.getElementById("trida").innerHTML = "1.B";
-        document.getElementById("btnCislo").innerHTML = vybrany;
-        zkouseniB.push(vybrany);
-        document.getElementById("btnDelka").innerHTML = zkouseniB.length;
-        nenalezeno = false;
-      }
-      if (zkouseniB.includes(zachranaB)) {
-        document.getElementById("text").innerHTML = vybrany;
-        document.getElementById("trida").innerHTML = "1.B";
-        document.getElementById("btnCislo").innerHTML = vybrany;
-        zkouseniB.push(vybrany);
-        document.getElementById("btnDelka").innerHTML = zkouseniB.length;
-        nenalezeno = false;
-      }
-      if (zkouseniA.length == prvniB.length) {
-        nenalezeno = false;
-        document.getElementById("prvniText").innerHTML = "Všichni už byli zkoušení";
-      }
+      vybrany = Math.floor(Math.random() * prvniA.length) + 1;
+      zkouseniB.push(vybrany);
+      document.getElementById("text").innerHTML = vybrany;
+      document.getElementById("text1").innerHTML = vybrany;
+      document.getElementById("trida").innerHTML = "1.B";
+      document.getElementById("trida1").innerHTML = "1.B";
+      document.getElementById("btnCislo").innerHTML = vybrany;
+      document.getElementById("btnDelka").innerHTML = zkouseniB.length;
+      nenalezeno = false;
     }
   }
 }
 vyzkouset();
 
-function neviditelnost() {
-  document.getElementById("napis").style.visibility = "hidden";
-}
-
-function viditelnost() {
-  document.getElementById("napis").style.visibility = "visible";
-}
-
 function obnovit() {
   location.reload();
+}
+
+function zapsatZnamku() {
+  var znamka = parseInt(document.getElementById("valZnamka").value);
+  var vaha = parseInt(document.getElementById("valVaha").value);
+  if (ulozit == 1) {
+    zapsatA.push([vybrany, znamka, vaha])
+    console.log("a" + zapsatA);
+    document.getElementById("valZnamka").value = "0";
+    document.getElementById("valVaha").value = "0";
+  }
+  if (ulozit == 2) {
+    zapsatB.push([vybrany, znamka, vaha])
+    console.log("b" + zapsatB);
+    document.getElementById("valZnamka").value = "0";
+    document.getElementById("valVaha").value = "0";
+  }
+}
+zapsatZnamku();
+
+function zapsatZnamku1() {
+  var znamka1 = parseInt(document.getElementById("valZnamka1").value);
+  var vaha1 = parseInt(document.getElementById("valVaha1").value);
+  if (ulozit == 1) {
+    zapsatA.push([vybrany, znamka1, vaha1])
+    console.log("a" + zapsatA);
+    document.getElementById("valZnamka1").value = "0";
+    document.getElementById("valVaha1").value = "0";
+  }
+  if (ulozit == 2) {
+    zapsatB.push([vybrany, znamka1, vaha1])
+    console.log("b" + zapsatB);
+    document.getElementById("valZnamka1").value = "0";
+    document.getElementById("valVaha1").value = "0";
+  }
+}
+zapsatZnamku1();
+
+function matej() {
+  window.location.href="http://krcek.cz/matej";
 }
