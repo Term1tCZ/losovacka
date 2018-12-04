@@ -44,7 +44,7 @@
         <div class="row">
             <div class="col-lg-3"></div>
             <div class="col-lg-2">
-              <button type="button" class="btn-xl btn-primary" disabled>Poslat na email</button>
+              <button type="button" class="btn-xl btn-primary" data-toggle="modal" data-target="#modalFunguj">Jak to funguje?</button>
             </div>
             <div class="col-lg-2">
               <button type="button" class="btn-xl btn-primary" onclick="obnovit()">Obnovit stránku</button>
@@ -152,6 +152,55 @@
             <div class="modal-footer">
               <button type="button" class="btn btn-info" onclick="zapsatZnamku1()">Zapsat známku</button>
               <button type="button" class="btn btn-success" onclick="dozkouset()">Vybrat dalšího</button>
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Zavřít</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- jak to funguje -->
+      <div class="modal fade" id="modalFunguj" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalLabel">Jak to funguje?</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col">
+                  <p class="txtT"><span class="bold">1) </span> Vyjdřív je potřeba si vybrat třídu, ze které chcete zkoušet.</p>
+                </div>
+                <div class="col">
+                  <div class="txtObr1">
+                    <img src="t1.png" class="t1 rounded float-right" alt="main">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <p class="txtT"><span class="bold">2) </span> Teď už jen stačí klikout na talčítko podle toho, jak chcete zkoušet.</p>
+                  <p class="txtT"><span class="bold">Vyzkoušet - </span> vyzkouší každého žáka ze třídy (ti, kteří už byli, mají menší šanci)</p>
+                  <p class="txtT"><span class="bold">Dozkoušet - </span> vyzkouší ty, kteří ještě nebyli</p>
+                </div>
+                <div class="col"></div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <p class="txtT"><span class="bold">3) </span> Nezapoměňte zapsat známku.</p>
+                </div>
+                <div class="col">
+                  <div class="txtObr1">
+                    <img src="t2.png" class="t2 rounded float-right" alt="vyber" >
+                  </div>
+                </div>
+              </div>
+
+
+
+            </div>
+            <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Zavřít</button>
             </div>
           </div>

@@ -75,3 +75,20 @@
     height: 800px;
   }
 }
+.t1 {
+  border: 1px solid black;
+  width: 100%;
+  margin-bottom: 5px;
+}
+.t2 {
+  border: 1px solid black;
+  width: 100%;
+}
+.txtT {
+  font-size: 18px;
+  text-align: justify;
+}
+.bold {
+  font-weight: bold;
+  text-align: justify;
+}
