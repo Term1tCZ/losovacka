@@ -158,5 +158,5 @@ function zapsatZnamku1() {
 zapsatZnamku1();
 
 function matej() {
-  window.location.href="http://krcek.cz/matej";
+  window.location.href="https://krcek.cz/matej";
 }
